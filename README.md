@@ -1,2 +1,16 @@
 # statusline.vim
-A light statusline for vim with Git support.
+
+# Installation
+
+## Required
+[vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+
+## vim-plug
+```vim
+Plug 'Dosx001/vim-template'
+```
+
+## Vundle
+```vim
+Plugin 'Dosx001/vim-template'
+```
