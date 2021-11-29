@@ -4,6 +4,7 @@
 
 ## Required
 [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+[vim-fugitive](https://github.com/tpope/vim-fugitive)
 
 ## vim-plug
 ```vim
