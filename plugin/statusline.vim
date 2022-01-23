@@ -54,8 +54,8 @@ fun! g:StatusColor()
   hi OM ctermfg=black ctermbg=13 guifg=#000000 guibg=#ef3cef
   hi User1 ctermfg=1 ctermbg=0 guifg=#b30000 guibg=#000000
   hi User2 ctermfg=1 ctermbg=234 guifg=#b30000 guibg=#1a1a1a
-  hi StatusLine ctermfg=237 ctermbg=196 guifg=#ef0000 guibg=#363636
-  hi StatusLineNC ctermfg=237 ctermbg=196 guifg=#ef0000 guibg=#363636
+  hi StatusLine ctermfg=237 ctermbg=196 guifg=#363636 guibg=#ef0000
+  hi StatusLineNC ctermfg=237 ctermbg=196 guifg=#363636 guibg=#ef0000
 endfun
 
 fun! StatueLine(statusline)
