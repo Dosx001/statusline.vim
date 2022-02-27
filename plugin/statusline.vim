@@ -8,10 +8,15 @@ set statusline+=%2*\ %{''.(&fenc!=''?&fenc:&enc).''}\  " Encoding
 
 fun! g:GitBranch()
   let branch = FugitiveStatusline()
-  return empty(branch) ? "" : GitSummary(0) . branch[5:-3]
+  let space = has('nvim') ? " " : ""
+  return empty(branch) ? "" : GitSummary(0) . space . branch[5:-3]
 endfun
 
 fun! g:GitSummary(int)
+  if has('nvim')
+    let stats = get(b:, 'gitsigns_status_dict', '')
+    return len(stats) == 6 ? '+' . stats['added'] . ' ~' . stats['changed'] . ' −' . stats['removed'] : ''
+  endif
   let [a,m,r] = GitGutterGetHunkSummary()
   return a:int ? "" : "+" . a . " ~" . m . " -" . r . " "
 endfun
@@ -54,8 +59,8 @@ fun! g:StatusColor()
   hi OM ctermfg=black ctermbg=13 guifg=#000000 guibg=#ef3cef
   hi User1 ctermfg=1 ctermbg=0 guifg=#b30000 guibg=#000000
   hi User2 ctermfg=1 ctermbg=234 guifg=#b30000 guibg=#1a1a1a
-  hi StatusLine ctermfg=237 ctermbg=196 guifg=#363636 guibg=#ef0000
-  hi StatusLineNC ctermfg=237 ctermbg=196 guifg=#363636 guibg=#ef0000
+  hi StatusLine ctermfg=237 ctermbg=196 gui=none guifg=#ef0000 guibg=#363636
+  hi StatusLineNC ctermfg=237 ctermbg=196 gui=none guifg=#ef0000 guibg=#363636
 endfun
 
 fun! StatueLine(statusline)
