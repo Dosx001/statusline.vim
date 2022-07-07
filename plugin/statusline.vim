@@ -23,9 +23,9 @@ endfun
 
 let g:currentmode = {
       \ 'n' : ['Normal', 'NM'],
-      \ 'niI' : ['Normal', 'NM'],
-      \ 'niR' : ['Normal', 'NM'],
-      \ 'niV' : ['Normal', 'NM'],
+      \ 'niI' : ['Normal·I', 'NM'],
+      \ 'niR' : ['Normal·R', 'NM'],
+      \ 'niV' : ['Normal·VR', 'NM'],
       \ 'i' : ['Insert', 'IM'],
       \ 'ix' : ['Completion', 'ICM'],
       \ 'ic' : ['Completion', 'ICM'],
@@ -35,17 +35,25 @@ let g:currentmode = {
       \ 's' : ['Select', 'SM'],
       \ 'S' : ['S·Line', 'SM'],
       \ "\<C-S>" : ['S·Block', 'SM'],
+      \ 'vs' : ['Visual·S', 'VM'],
+      \ 'Vs' : ['Visual·SL', 'VM'],
+      \ "\<C-V>s" : ['V·Block·SB', 'VM'],
       \ 'R' : ['Replace', 'RM'],
-      \ 'Rv' : ['V·Replace', 'RM'],
-      \ 'Rx' : ['C·Replace', 'RM'],
-      \ 'Rc' : ['C·Replace', 'RM'],
+      \ 'Rv' : ['V·Replace', 'VRM'],
+      \ 'Rx' : ['Completion·R', 'ICM'],
+      \ 'Rc' : ['Completion·R', 'ICM'],
+      \ 'Rvc' : ['Completion·VR', 'ICM'],
+      \ 'Rvx' : ['Completion·VR', 'ICM'],
       \ 'c' : ['Command', 'CM'],
-      \ 'ce' : ['Ex', 'OM'],
+      \ 'cv' : ['Ex Mode', 'OM'],
       \ 'r' : ['Prompt', 'OM'],
       \ 'rm' : ['More', 'OM'],
       \ 'r?' : ['Confirm', 'OM'],
       \ '!' : ['Shell', 'OM'],
-      \ 't' : ['Terminal', 'OM']
+      \ 't' : ['Terminal', 'OM'],
+      \ 'no' : ['Operator-pending', 'OM'],
+      \ 'nov' : ['Operator-pending', 'OM'],
+      \ 'noV' : ['Operator-pending', 'OM']
       \}
 
 fun! g:StatusColor()
@@ -53,7 +61,8 @@ fun! g:StatusColor()
   hi IM ctermfg=black ctermbg=124 guifg=#000000 guibg=#a40000
   hi ICM ctermfg=black ctermbg=33 guifg=#000000 guibg=#007fef
   hi VM ctermfg=black ctermbg=4 guifg=#000000 guibg=#0037da
-  hi RM ctermfg=black ctermbg=166 guifg=#000000 guibg=#ca5900
+  hi RM ctermfg=black ctermbg=202 guifg=#000000 guibg=#ca5900
+  hi VRM ctermfg=black ctermbg=166 guifg=#000000 guibg=#af5f00
   hi SM ctermfg=black ctermbg=154 guifg=#000000 guibg=#a4f00e
   hi CM ctermfg=black ctermbg=53 guifg=#000000 guibg=#590059
   hi OM ctermfg=black ctermbg=13 guifg=#000000 guibg=#ef3cef
